@@ -29,6 +29,9 @@ const app = {
   data: detailedBandObject, //this comes from my data.js files
 
     initialize: () => {
+    $('.box').click(e => {
+      $(e.currentTarget).toggleClass('transform')
+    });
     $('.compareSky').click(function () {
       app.compareSky();
     })
