@@ -77,3 +77,8 @@ h2 {
 .transform {
   transform: scale(2.5);
 }
+
+#dog-img {
+  width:200px;
+  height: 200px;
+}

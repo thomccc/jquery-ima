@@ -24,6 +24,17 @@ $(document).ready(() => {
 });
 
 
+// function GET() {
+//   let img = document.getElementById("dog-img");
+//   fetch('https://dog.ceo/api/breeds/image/random')
+//   .then((res)=> (res.json()))
+//   .then (data => {
+//     img.src = data.message
+//   })
+// }
+
+
+
 //trying the app structure and loading data
 const app = {
   data: detailedBandObject, //this comes from my data.js files
@@ -34,7 +45,10 @@ const app = {
     });
     $('.compareSky').click(function () {
       app.compareSky();
-    })
+    });
+    $('.dog-button').click(function (e) {
+      app.fetchImages();
+     });
   },
 
 
@@ -45,6 +59,19 @@ const app = {
     $('.skyComparison').text(
       `${australiaBuildings.length > koreaBuildings.length ? 'Australia' : 'Korea'}
     had more skyscrapers (300m+)`);
-  }
+  },
+
+  fetchImages: () => {
+     let img = document.getElementById("dog-img");
+
+      fetch('https://dog.ceo/api/breeds/image/random')
+      .then(response => response.json())
+      .then(data => {
+      img.src = data.message
+
+     });
+
+  },
+
 
 }
